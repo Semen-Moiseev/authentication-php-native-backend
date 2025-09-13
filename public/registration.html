@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Регистрация</title>
+	</head>
+	<body>
+		<main>
+			<h2>Регистрация</h2>
+
+			<form method="POST" action="src/action_registration.php">
+				<label>Ваше имя:</label>
+				<input type="text" name="name" value="" required />
+				<br />
+
+				<label>Email:</label>
+				<input type="text" name="email" value="" required />
+				<br />
+
+				<label>Номер телефона:</label>
+				<input type="text" name="phone" value="" required />
+				<br />
+
+				<label>Пароль:</label>
+				<input type="text" name="password" value="" required />
+				<br />
+
+				<label>Повторите пароля:</label>
+				<input type="text" name="confirm_password" value="" required />
+				<br /><br />
+
+				<button type="submit">Регистрация</button>
+			</form>
+
+			<br /><br />
+			<a href="login.html">Вход</a>
+		</main>
+	</body>
+</html>
