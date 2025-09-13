@@ -3,6 +3,7 @@
 session_start();
 require_once('../config/db.php');
 require_once('../includes/auth.php');
+require_once('../includes/validation.php');
 checkAuth();
 
 // Обработка формы
@@ -43,19 +44,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 	else {
 		$message = invalidateName($newName);
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<script type='text/javascript'>alert('$message');
+		location.href='../frontend/profile.php';</script>";
 	}
-}
-
-// Функция для валидации имени
-function invalidateName($name) {
-	if(strlen($name) < 3 || strlen($name) > 30) {
-		return "Имя пользователя должно быть от 3 до 30 символов";
-	}
-
-	if(!preg_match('/^[a-zA-Zа-яА-я]/u', $name)) {
-		return "Имя пользователя может содержать только буквы";
-	}
-
-	return "";
 }
