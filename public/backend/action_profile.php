@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once('includes/helpers.php');
-require_once('includes/auth.php');
+require_once('../config/db.php');
+require_once('../includes/auth.php');
 checkAuth();
 
 // Обработка формы
@@ -32,11 +32,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 		if($update->execute()){
 			$_SESSION['user_name'] = $newName;
 			$name = $newName;
-			header('Location: profile.php');
+			header('Location: ../frontend/profile.php');
 			exit;
 		}
 		else {
-			echo "<script> alert('Ошибка при обновлении');</script>";
+			echo "<script> alert('Ошибка при обновлении данных');</script>";
 		}
 
 		$conn->close();
@@ -59,34 +59,3 @@ function invalidateName($name) {
 
 	return "";
 }
-
-?>
-
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Профиль</title>
-	</head>
-	<body>
-		<main>
-			<h1>Личный профиль пользователя</h1><br>
-
-			<p><strong>Имя: </strong> <?=htmlspecialchars($name);?> </p>
-			<p><strong>Email: </strong> <?=htmlspecialchars($email);?> </p>
-			<p><strong>Номер телефона: </strong> <?=htmlspecialchars($phone);?> </p>
-
-			<h2>Редактирование данных</h2>
-			<form method="POST">
-				<label>Новое имя: </label>
-				<input type="text" name="name" value="<?=htmlspecialchars($name);?>" required />
-				<br /><br />
-
-				<button type="submit">Сохранить</button>
-			</form>
-
-			<p><a href="src/logout.php">Выйти</a></p>
-		</main>
-	</body>
-</html>

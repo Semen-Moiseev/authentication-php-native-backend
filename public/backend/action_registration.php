@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../includes/helpers.php');
+require_once('../config/db.php');
 
 // Функция для валидации регистрации
 function invalidateRegistration($name, $email, $phone, $password, $confirm_password) {
@@ -65,12 +65,12 @@ if(!invalidateRegistration($name, $email, $phone, $password, $confirm_password))
 	$stmt->bind_param("ssss", $name, $email, $phone, $password_hash); // Привязка переменных к SQL запросу
 
 	if($stmt->execute()){
-		header('Location: ../login.html');
+		header('Location: ../frontend/login.html');
 		exit;
 	}
 	else {
 		echo "<script> alert('Пользователь с такой почтой или телефоном уже зарегистрирован. Повторите попытку!');
-		location.href='../registration.html';</script>";
+		location.href='../frontend/registration.html';</script>";
 		exit;
 	}
 
@@ -80,6 +80,6 @@ if(!invalidateRegistration($name, $email, $phone, $password, $confirm_password))
 else {
 	$message = invalidateRegistration($name, $email, $phone, $password, $confirm_password);
 	echo "<script type='text/javascript'>alert('$message');
-	location.href='../registration.html';</script>";
+	location.href='../frontend/registration.html';</script>";
 	exit;
 }
