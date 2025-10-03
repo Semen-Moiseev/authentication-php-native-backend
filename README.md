@@ -1,41 +1,54 @@
-# mini_profile
+# mini_profile <ins>***EN***</ins>
 
-    ТЗ:
-    [x] В форме регистрации пользователь должен указать Имя, телефон, почту, пароль и повтор пароля.
-    [x] Почта, логин  и телефон должны быть уникальны и если такие в базе уже есть - уведомлять пользователя об этом.
-    [x] Пароли в обоих полях должны совпадать, иначе уведомлять пользователя об этом.
-    [x] Авторизация возможна по телефону или email (в одном поле) и паролю.
-    [] Необходимо добавить Yandex SmartCaptcha при авторизации.
-    [x] Сделать страницу, к которой только авторизованные пользователи имеют доступ. Неавторизованные пользователи должны перенаправляться на главную страницу. На этой странице пользователи могут менять свою личную информацию (имя, телефон, почта, пароль).
+User authentication system in native PHP with registration, authorization and personal account
 
-Нам важно знать именно ваши навыки обращения с кодом, по этому переписанные готовые решения не принимаются. Всё должно быть выполнено с использованием нативного php, без использования сторонних языков и фреймворков.
+## Project Description
 
-Yandex SmartCaptcha добавить не удалось. После создания капчи, она не появилась в списке созданных капч.
-<img width="1842" height="428" alt="image" src="https://github.com/user-attachments/assets/092a86a4-69a2-40f4-ac74-d6b3c08d93fa" />
+_Brief description of the project:_
 
-После обращения в тех. поддержку меня проинформировали, что необходимо выполнить верификационный платёж в размере минимальной суммы пополнения (5000р).
-<img width="788" height="141" alt="image" src="https://github.com/user-attachments/assets/f952b0b6-d280-4a84-886f-209addb19d47" />
-<img width="603" height="112" alt="image" src="https://github.com/user-attachments/assets/0fffa3cd-b4a9-4bd0-b000-c3bab98e0aca" />
-<img width="877" height="268" alt="image" src="https://github.com/user-attachments/assets/fd640c3d-946d-4920-866c-c52d4a5e138d" />
+The project is a native PHP user authentication system. A registration form has been implemented with email and phone uniqueness validation and password match verification. The authorization system supports logging in by email or phone with Yandex SmartCaptcha integration to protect against bots. A secure profile page has been created, accessible only to authorized users, with the functionality of editing personal data. All solutions are implemented in pure PHP without using frameworks, with its own validation and error handling system.
 
-    Архитектура проекта:
-    
-    public/
-    │── config/
-    │   └── db.php                      # подключение к БД
-    │
-    │── includes/
-    │   ├── validation.php              # функция валидации данных
-    │   └── auth.php                    # функция проверки авторизации 
-    │
-    │── frontend/
-    │   ├── index.html                  # главная страница
-    │   ├── registration.html           # форма регистрации
-    │   ├── login.html                  # форма логина
-    │   └── profile.php                 # профиль (только для авторизованных)
-    │
-    └── backend/
-        ├── logout.php                  # выход
-        ├── action_registration.php     # обработка регистрации
-        ├── action_profile.php          # обработка изменений данных в профиле
-        └── action_login.php            # обработка авторизации
+_The detailed terms of reference:_
+
+Write registration forms, authorization, profile page:
+- In the registration form, the user must provide a Name, phone number, email, password, and repeat password.
+- Mail, login, and phone number must be unique, and if they already exist in the database, notify the user about it.
+- Passwords in both fields must match, otherwise notify the user about it.
+- Authorization is possible by phone or email (in one field) and password, you need to add Yandex SmartCaptcha during authorization. - Create a page that only authorized users have access to.
+
+Unauthorized users should be redirected to the main page. On this page, users can change their personal information (name, phone, email, password).
+
+Everything should be done using native php, without using third-party languages and frameworks.
+
+## Technologies used
+
+- PHP 8.4.0
+- MySQL 8.0.43
+
+----------------------------------------------------------------------------
+# mini_profile <ins>***RU***</ins>
+
+Система аутентификации пользователей на нативном PHP с регистрацией, авторизацией и личным кабинетом
+
+## Описание проекта
+
+_Краткое описание проекта:_
+
+Проект представляет собой нативную PHP-систему аутентификации пользователей. Реализована форма регистрации с валидацией уникальности email, телефона и проверкой совпадения паролей. Система авторизации поддерживает вход по email или телефону с интеграцией Yandex SmartCaptcha для защиты от ботов. Создана защищенная страница профиля, доступная только авторизованным пользователям, с функционалом редактирования личных данных. Все решения реализованы на чистом PHP без использования фреймворков, с собственной системой валидации и обработки ошибок.
+
+_Подробное техническое задание:_
+
+Написать формы регистрации, авторизации, страницу профиля:
+- В форме регистрации пользователь должен указать Имя, телефон, почту, пароль и повтор пароля.
+- Почта, логин  и телефон должны быть уникальны и если такие в базе уже есть - уведомлять пользователя об этом.
+- Пароли в обоих полях должны совпадать, иначе уведомлять пользователя об этом.
+- Авторизация возможна по телефону или email (в одном поле) и паролю, необходимо добавить Yandex SmartCaptcha при авторизации. - Сделать страницу, к которой только авторизованные пользователи имеют доступ.
+
+Неавторизованные пользователи должны перенаправляться на главную страницу. На этой странице пользователи могут менять свою личную информацию (имя, телефон, почта, пароль).
+
+Всё должно быть выполнено с использованием нативного php, без использования сторонних языков и фреймворков.
+
+## Используемые технологии
+
+- PHP 8.4.0
+- MySQL 8.0.43
