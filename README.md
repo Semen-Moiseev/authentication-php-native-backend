@@ -1,4 +1,4 @@
-# mini_profile <ins>***EN***</ins>
+# authentication-php-native-backend <ins>***EN***</ins>
 
 User authentication system in native PHP with registration, authorization and personal account
 
@@ -26,7 +26,7 @@ Everything should be done using native php, without using third-party languages 
 - MySQL 8.0.43
 
 ----------------------------------------------------------------------------
-# mini_profile <ins>***RU***</ins>
+# authentication-php-native-backend <ins>***RU***</ins>
 
 Система аутентификации пользователей на нативном PHP с регистрацией, авторизацией и личным кабинетом
 
